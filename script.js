@@ -2,11 +2,17 @@
 const container = document.querySelector(".container")
 
 // Declare newDiv and append it to the container
-for (let i = 0; i < 256; i++) {
-    const newDiv = document.createElement("div");
-    newDiv.classList.add("grid-item"); // Add class to newDiv
-    container.appendChild(newDiv);
-}
+let userNum = 16
+function gridCreator(userNum) {
+    for (let i = 0; i < userNum ** 2; i++) {
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("grid-item"); // Add class to newDiv
+        container.appendChild(newDiv);
+    }
+} 
+
+// Call function
+gridCreator(16)
 
 // Group gridItems
 const gridItems = document.querySelectorAll(".grid-item");
@@ -16,4 +22,20 @@ gridItems.forEach(element => {
     element.addEventListener("mouseenter", () => {
         element.style.backgroundColor = "blue"; // Make grid hover
     });
+});
+
+// Generate button
+const button = document.createElement("button");
+button.textContent = "Grid"
+document.body.appendChild(button);
+
+// Add eventListener for clicking
+button.addEventListener("click", () => {
+    let userNum = Number(prompt("Type any number from 0 to 100")); // Make button call prompt
+    if (userNum < 0 || userNum > 100 || userNum % 1 !== 0) {
+        alert("Sorry! I only accept finite numbers between 0 and 100."); // Prompt only accepts finite numbers between 0 and 100
+    } else {
+        container.textContent = "" // Remove old grid
+        gridCreator(userNum); // Regenerate grid
+    }
 });
