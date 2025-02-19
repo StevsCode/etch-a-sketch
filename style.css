@@ -9,12 +9,13 @@
     margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
+    background-color: white;
 }
 
 /* Insert every grid-item inside the container */
 .grid-item {
     box-sizing: border-box;
-    border: 1px solid white;
+    border: 1px solid black;
 }
 
 /* Center button and make it look better */

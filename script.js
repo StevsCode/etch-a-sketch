@@ -21,7 +21,7 @@ function gridHover() {
     // Add eventListener for passing mouse
     gridItems.forEach(element => {
         element.addEventListener("mouseenter", () => {
-            element.style.backgroundColor = "red"; // Make grid hover
+            element.style.backgroundColor = "black";
         });
     });
 }
