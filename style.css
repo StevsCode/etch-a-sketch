@@ -14,7 +14,7 @@
 /* Insert every grid-item inside the container */
 .grid-item {
     box-sizing: border-box;
-    border: 2px solid white;
+    border: 1px solid white;
 }
 
 /* Center button and make it look better */
