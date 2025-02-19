@@ -72,3 +72,26 @@ reset.addEventListener("click", () => {
         gridHover() // Make grid hover
 });
 
+// Generate RGB random
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+// Apply random colors
+function applyRandomColors() {
+    const gridItems = document.querySelectorAll(".grid-item")
+    gridItems.forEach(element => {
+        element.addEventListener("mouseenter", () => {
+            const randomColor = getRandomColor();
+            element.style.backgroundColor = randomColor;
+        });
+    })
+}
+
+// Make ramdomColors button responsive
+randomColors.addEventListener("click", () => {
+    applyRandomColors();
+})
