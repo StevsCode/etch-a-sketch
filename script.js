@@ -27,10 +27,25 @@ function gridHover() {
 }
 gridHover()
 
-// Generate button
-const button = document.createElement("button");
-button.textContent = "How many boxes?"
-document.body.appendChild(button);
+// Generate buttons container
+const buttons = document.createElement("div");
+buttons.classList.add("buttons")
+document.body.appendChild(buttons);
+// Darken this thing
+const darken = document.createElement("button");
+darken.classList.add("darken")
+darken.textContent = "Darken this thing"
+buttons.appendChild(darken);
+// How many boxes?
+const boxes = document.createElement("button");
+boxes.classList.add("boxes")
+boxes.textContent = "How many boxes?"
+buttons.appendChild(boxes);
+// Get random colors
+const randomColors = document.createElement("button");
+randomColors.classList.add("randomColors")
+randomColors.textContent = "Get random colors"
+buttons.appendChild(randomColors);
 
 // Add eventListener for clicking
 button.addEventListener("click", () => {
