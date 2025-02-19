@@ -10,19 +10,20 @@ function gridCreator(userNum) {
         container.appendChild(newDiv);
     }
 } 
-
-// Call function
 gridCreator(16)
 
-// Group gridItems
-const gridItems = document.querySelectorAll(".grid-item");
-
-// Add eventListener for passing mouse
-gridItems.forEach(element => {
-    element.addEventListener("mouseenter", () => {
-        element.style.backgroundColor = "blue"; // Make grid hover
+// Create hover function
+function gridHover() {
+    // Group gridItems
+    const gridItems = document.querySelectorAll(".grid-item");
+    // Add eventListener for passing mouse
+    gridItems.forEach(element => {
+        element.addEventListener("mouseenter", () => {
+            element.style.backgroundColor = "blue"; // Make grid hover
+        });
     });
-});
+}
+gridHover()
 
 // Generate button
 const button = document.createElement("button");
@@ -37,5 +38,8 @@ button.addEventListener("click", () => {
     } else {
         container.textContent = "" // Remove old grid
         gridCreator(userNum); // Regenerate grid
+        container.style.width = `${userNum * 60}px` // Set container's new width and height
+        container.style.height = `${userNum * 60}px`
+        gridHover() // Make grid hover
     }
 });
