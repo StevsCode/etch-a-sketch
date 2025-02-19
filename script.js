@@ -64,3 +64,11 @@ boxes.addEventListener("click", () => {
     }
 });
 
+// Reset grid
+// Add eventListener for clicking
+reset.addEventListener("click", () => {
+        container.textContent = "" // Remove old grid
+        gridCreator(16); // Regenerate grid
+        gridHover() // Make grid hover
+});
+
