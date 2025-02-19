@@ -7,8 +7,8 @@ function gridCreator(userNum) {
     for (let i = 0; i < userNum ** 2; i++) {
         const newDiv = document.createElement("div");
         newDiv.classList.add("grid-item"); // Add class to newDiv
-        newDiv.style.width = `${Math.round(960 / userNum) - 1}px` // Set divs' width and height
-        newDiv.style.height = `${Math.round(960 / userNum) - 1}px`
+        newDiv.style.width = `${Math.floor(960 / userNum)}px` // Set divs' width and height
+        newDiv.style.height = `${Math.floor(960 / userNum)}px`
         container.appendChild(newDiv);
     }
 } 
