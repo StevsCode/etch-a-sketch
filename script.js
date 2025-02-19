@@ -27,6 +27,10 @@ function gridHover() {
 }
 gridHover()
 
+
+
+
+
 // Generate buttons container
 const buttons = document.createElement("div");
 buttons.classList.add("buttons")
@@ -52,6 +56,9 @@ reset.classList.add("reset")
 reset.textContent = "Reset"
 document.body.appendChild(reset);
 
+
+
+
 // Add eventListener for clicking
 boxes.addEventListener("click", () => {
     let userNum = Number(prompt("Type any number from 0 to 100")); // Make button call prompt
@@ -64,13 +71,24 @@ boxes.addEventListener("click", () => {
     }
 });
 
+
+function resetGrid() {
+    container.textContent = "" // Remove old grid
+    gridCreator(16); // Regenerate grid
+    gridHover() // Make grid hover
+}
+
 // Reset grid
 // Add eventListener for clicking
 reset.addEventListener("click", () => {
-        container.textContent = "" // Remove old grid
-        gridCreator(16); // Regenerate grid
-        gridHover() // Make grid hover
+        resetGrid()
 });
+
+
+
+
+
+
 
 // Generate RGB random
 function getRandomColor() {
@@ -93,5 +111,34 @@ function applyRandomColors() {
 
 // Make ramdomColors button responsive
 randomColors.addEventListener("click", () => {
+    resetGrid()
     applyRandomColors();
 })
+
+
+
+
+// Create darkenFunction
+function darkenFunction() {
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach(element => {
+        // Ensure the opacity starts from 0 (fully transparent)
+        let opacity = 0;
+        element.addEventListener("mouseenter", () => {
+            // Increase opacity by 0.1 until it reaches 1
+            if (opacity < 1) {
+                opacity += 0.1;
+                element.style.opacity = opacity; // Apply the opacity to the element
+            } else {
+                opacity = 1;
+                element.style.opacity = opacity
+            }
+        });
+    });
+}
+
+// Make the "darken" button responsive
+darken.addEventListener("click", () => {
+    resetGrid();
+    darkenFunction(); // Apply darken effect after reset
+});
