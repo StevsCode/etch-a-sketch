@@ -21,7 +21,7 @@ function gridHover() {
     // Add eventListener for passing mouse
     gridItems.forEach(element => {
         element.addEventListener("mouseenter", () => {
-            element.style.backgroundColor = "blue"; // Make grid hover
+            element.style.backgroundColor = "red"; // Make grid hover
         });
     });
 }
@@ -29,7 +29,7 @@ gridHover()
 
 // Generate button
 const button = document.createElement("button");
-button.textContent = "Grid"
+button.textContent = "How many boxes?"
 document.body.appendChild(button);
 
 // Add eventListener for clicking

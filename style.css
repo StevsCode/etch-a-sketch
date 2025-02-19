@@ -7,6 +7,7 @@
     width: 960px;
     height: 960px;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 /* Insert every grid-item inside the container */
@@ -14,5 +15,26 @@
     box-sizing: border-box;
     width: 60px;
     height: 60px;
-    border: 2px solid black;
+    border: 2px solid white;
+}
+
+/* Center button and make it look better */
+button {
+    display: block;
+    box-sizing: content-box;
+    width: 220px;
+    height: 90px;
+    margin: 0 auto;
+    font-family: 'Press Start 2P', Courier, monospace;
+    font-weight: bold;
+    font-size: large;
+    color: white;
+    background-color: gray;
+    border: 4px outset black;
+    border-radius: 15%;
+    line-height: 1.5;
+}
+
+body {
+    background-color: #1A2B3C;
 }
