@@ -8,4 +8,12 @@ for (let i = 0; i < 256; i++) {
     container.appendChild(newDiv);
 }
 
-// 
+// Group gridItems
+const gridItems = document.querySelectorAll(".grid-item");
+
+// Add eventListener for passing mouse
+gridItems.forEach(element => {
+    element.addEventListener("mouseenter", () => {
+        element.style.backgroundColor = "blue"; // Make grid hover
+    });
+});
