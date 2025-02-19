@@ -4,14 +4,15 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    width: 850px;
-    height: 800px;
+    width: 960px;
+    height: 960px;
     margin: 0 auto;
 }
 
 /* Insert every grid-item inside the container */
 .grid-item {
-    width: 48px;
-    height: 48px;
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
     border: 2px solid black;
 }
