@@ -46,9 +46,14 @@ const randomColors = document.createElement("button");
 randomColors.classList.add("randomColors")
 randomColors.textContent = "Get random colors"
 buttons.appendChild(randomColors);
+// Reset
+const reset = document.createElement("button");
+reset.classList.add("reset")
+reset.textContent = "Reset"
+document.body.appendChild(reset);
 
 // Add eventListener for clicking
-button.addEventListener("click", () => {
+boxes.addEventListener("click", () => {
     let userNum = Number(prompt("Type any number from 0 to 100")); // Make button call prompt
     if (userNum < 0 || userNum > 100 || userNum % 1 !== 0) {
         alert("Sorry! I only accept finite numbers between 0 and 100."); // Prompt only accepts finite numbers between 0 and 100
@@ -58,3 +63,4 @@ button.addEventListener("click", () => {
         gridHover() // Make grid hover
     }
 });
+

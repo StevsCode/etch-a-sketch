@@ -30,7 +30,8 @@
 /* Center button and make it look better */
 .boxes,
 .randomColors,
-.darken {
+.darken,
+.reset {
     display: block;
     box-sizing: content-box;
     width: 220px;
@@ -54,10 +55,20 @@
     background-color: green;
 }
 
+.reset {
+    width: 195px;
+    height: 65px;
+    font-size: medium;
+    font-weight: normal;
+    margin-top: 50px;
+    background-color: red;
+}
+
 .boxes {
     width: 270px;
     height: 140px;
     font-size: larger;
+    font-weight: bolder;
 }
 
 body {
