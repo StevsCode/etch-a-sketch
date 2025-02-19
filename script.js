@@ -7,6 +7,8 @@ function gridCreator(userNum) {
     for (let i = 0; i < userNum ** 2; i++) {
         const newDiv = document.createElement("div");
         newDiv.classList.add("grid-item"); // Add class to newDiv
+        newDiv.style.width = `${Math.round(960 / userNum) - 1}px` // Set divs' width and height
+        newDiv.style.height = `${Math.round(960 / userNum) - 1}px`
         container.appendChild(newDiv);
     }
 } 
@@ -38,8 +40,6 @@ button.addEventListener("click", () => {
     } else {
         container.textContent = "" // Remove old grid
         gridCreator(userNum); // Regenerate grid
-        container.style.width = `${userNum * 60}px` // Set container's new width and height
-        container.style.height = `${userNum * 60}px`
         gridHover() // Make grid hover
     }
 });
